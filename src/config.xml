@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+    			
+    			http://www.springframework.org/schema/context  
+                http://www.springframework.org/schema/context/spring-context-3.0.xsd
+                
+                http://www.springframework.org/schema/util  
+                http://www.springframework.org/schema/util/spring-util-3.0.xsd
+                
+    			http://www.springframework.org/schema/beans  
+                http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean class="com.app.model.Employee" name="empObj"
+		p:empSal="13.34">
+		<property name="empId">
+			<value>52</value>
+		</property>
+		<property name="empName" value="Dinesh" />
+		
+		<property name="list">
+		<list>
+		<value>L1</value>
+		<value>L2</value>
+		<value>L3</value>
+		<value>L4</value>
+		</list>
+		</property>
+		
+		<property name="set">
+		<set>
+		<value>S1</value>
+		<value>S2</value>
+		<value>S3</value>
+		<value>S4</value>
+		</set>
+		</property>
+		<property name="map">
+		<map>
+		<entry key="A"  value="10"/>
+		<entry>
+		<key>
+		<value>B</value>
+		</key>
+		<value>20</value>
+		</entry>
+		<entry key="C"  value="30"/>
+		<entry key="D"  value="40"/>
+		</map>
+		</property>
+		<property name="properties">
+		<props>
+		<prop key="A1">B1</prop>
+		<prop key="A2">B2</prop>
+		<prop key="A3">B3</prop>
+		<prop key="A4">B4</prop>
+		</props>
+		</property>
+	</bean>	
+	<bean class="com.app.model.Address" name="addrObj">
+	<property name="addrId" value="12345"/>
+	<property name="addrLoc" value="HYDERABAD"/>
+	<property name="emp">
+	<ref bean="empObj"/>
+	</property>
+	</bean>
+</beans>
